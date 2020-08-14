@@ -1,0 +1,15 @@
+namespace "Program"
+{
+    using "System";
+    using "System.IO";
+
+    public class ProgramTest
+    {
+        public static int main()
+        {
+
+            return 0;
+        }
+
+    }
+}
