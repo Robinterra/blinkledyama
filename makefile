@@ -6,6 +6,7 @@ defines:=define avr-gcc define $(microcontroller)
 outasmFile:=out.S
 outbinFile:=out.elf
 hexfile:=out.hex
+includes:=inc ./avrlibrary
 
 all: init build
 
@@ -21,7 +22,7 @@ assembly:
 	avr-gcc -nostartfiles -mmcu=$(microcontroller) -o $(bin)/$(outbinFile) $(bin)/$(outasmFile)
 
 compile:
-	yama out $(bin)/$(outasmFile) $(defines) def $(assemblerdefinition) inc $(src)
+	yama out $(bin)/$(outasmFile) $(defines) def $(assemblerdefinition) inc $(src) $(includes)
 
 clean:
 	rm -rf $(bin)

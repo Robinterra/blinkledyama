@@ -1,0 +1,3 @@
+[submodule "avrlibrary"]
+	path = avrlibrary
+	url = https://github.com/Robinterra/avrlibrary.git
