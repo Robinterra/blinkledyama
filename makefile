@@ -11,6 +11,7 @@ includes:=inc ./avrlibrary
 all: init build
 
 init:
+	git submodule update --init
 	mkdir -p $(bin)
 
 build: compile assembly tohexfile
