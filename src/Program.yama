@@ -4,20 +4,24 @@ namespace "Program"
     using "System.Time";
 
     using "AVR.Atmega";
+    using "Arduino.Uno";
 
     public class ProgramTest
     {
         public static int main()
         {
-            IORegister.InitPortB ( IOPin.Pin5, IORegisterMode.Write );
+            //IORegister.InitPortB ( IOPin.Pin5, IORegisterMode.Write );
+            PinFacade pinD13 = new PinFacade ( ArduinoPins.D13, IORegisterMode.Write );
 
             while (true)
             {
-                IORegister.PortB[IOPin.Pin5] = IOValue.High;
+                //IORegister.PortB[IOPin.Pin5] = IOValue.High;
+                pinD13.Write ( IOValue.High );
 
                 Wait.InSeconds ( 5 );
 
-                IORegister.PortB[IOPin.Pin5] = IOValue.Low;
+                //IORegister.PortB[IOPin.Pin5] = IOValue.Low;
+                pinD13.Write ( IOValue.Low );
 
                 Wait.InSeconds ( 5 );
             }
