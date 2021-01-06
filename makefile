@@ -23,7 +23,7 @@ assembly:
 	avr-gcc -nostartfiles -mmcu=$(microcontroller) -o $(bin)/$(outbinFile) $(bin)/$(outasmFile)
 
 compile:
-	yama out $(bin)/$(outasmFile) $(defines) def $(assemblerdefinition) inc $(src) $(includes)
+	yama build ao $(bin)/$(outasmFile) $(defines) def $(assemblerdefinition) inc $(src) $(includes)
 
 clean:
 	rm -rf $(bin)
